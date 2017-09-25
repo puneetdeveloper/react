@@ -1,0 +1,25 @@
+import React from 'react';
+import Nav from './nav/nav';
+import Footer from './footer/footer';
+import DocumentTitle from "react-document-title";
+import {STRINGS} from './_utility/constants';
+
+class App extends React.Component {
+    
+    render() {
+        return (
+            <DocumentTitle title={STRINGS.PROJECT_NAME}>
+            <div>
+                <Nav/>
+                <div id="mainWrapper">
+                    {this.props.children}
+                </div>            
+                <Footer/>
+            </div>
+            </DocumentTitle>
+        )
+    }
+    
+}
+
+export default App;
